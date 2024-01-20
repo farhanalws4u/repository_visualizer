@@ -5,9 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repository Visualizer</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script defer type="module" src="./script.js"></script>
   </head>
   <body>
-    <h1>My Repository Visualizer</h1>
-    <script type="module" src="./script.js"></script>
+    <nav class="navbar">
+      <div class="navbar__logo_container">
+        <img class="logo" src="./assets/images/logo_accent.png" alt="logo" />
+        <h1 class="navbar__logo_heading">Repos</h1>
+      </div>
+    </nav>
+    <!-- Loader  -->
+    <div id="loader" class="loader_container">
+      <div class="loader"></div>
+    </div>
+    <!-- Form  -->
+    <div class="form" id="form_container">
+      <div class="form__inner" id="form">
+        <label for="username">Enter Github Username</label>
+        <input
+          class="usernameInput"
+          type="text"
+          placeholder="e.g: johndoe"
+          id="username"
+          name="username"
+        />
+        <button id="submitBtn">Fetch Repos</button>
+      </div>
+    </div>
+    <!-- Hero Container  -->
+    <section id="main-container" class="main_container">
+      <!-- Profile Section starts -->
+      <div class="main__profile_container">
+        <div class="profile__image_container">
+          <img
+            id="profileImage"
+            class="profile__image"
+            src="./assets/images/profile.png"
+            alt="profile"
+          />
+        </div>
+        <div class="profile__details_section">
+          <h2 id="name" class="profile__name"></h2>
+          <p id="bio" class="profile__bio"></p>
+          <div class="profile_location_container">
+            <img
+              class="profile__location_icon"
+              src="./assets/images/location-pin.png"
+              alt="pin"
+            />
+            <p id="location" class="profile__location"></p>
+          </div>
+          <a id="blogUrl" class="profile__blog_url" href="#" target="_blank">
+          </a>
+          <a id="githubUrl" class="profile__blog_url" href="#" target="_blank">
+          </a>
+        </div>
+      </div>
+      <!-- Profile section ends  -->
+
+      <!-- Repository section starts  -->
+      <div class="repo_container">
+        <div class="heading_select_container">
+          <h1 class="repo__heading">Public Repositories</h1>
+          <div id="per-page-container">
+            <label for="per-page">Repositories per page:</label>
+            <select id="per-page">
+              <option value="10" selected>10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+              <option value="60">60</option>
+              <option value="70">70</option>
+              <option value="80">80</option>
+              <option value="90">90</option>
+              <option value="100">100</option>
+            </select>
+          </div>
+        </div>
+        <div id="repos-container" class="repo_list"></div>
+      </div>
+      <!-- Repository section ends  -->
+
+      <div class="pagination_container">
+        <a id="prev" class="arrow_btn_container">
+          <img
+            class="img_arrows"
+            src="./assets/images/previous.png"
+            alt="prev"
+          />
+          <span>Prev</span>
+        </a>
+        <div class="pagination_bar" id="pagination-bar"></div>
+        <a id="next" class="arrow_btn_container">
+          <span>Next</span>
+          <img class="img_arrows" src="./assets/images/next.png" alt="prev" />
+        </a>
+      </div>
+    </section>
   </body>
 </html>
