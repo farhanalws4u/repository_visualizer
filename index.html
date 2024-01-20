@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Repository Visualizer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico" />
     <link rel="stylesheet" href="./styles.css" />
     <script defer type="module" src="./script.js"></script>
   </head>
@@ -29,7 +30,7 @@
           id="username"
           name="username"
         />
-        <button id="submitBtn">Fetch Repos</button>
+        <button type="button" id="submitBtn">Fetch Repos</button>
       </div>
     </div>
     <!-- Hero Container  -->
@@ -87,7 +88,7 @@
       </div>
       <!-- Repository section ends  -->
 
-      <div class="pagination_container">
+      <div class="pagination_container" id="pagination-container">
         <a id="prev" class="arrow_btn_container">
           <img
             class="img_arrows"
