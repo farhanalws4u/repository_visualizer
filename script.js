@@ -71,11 +71,7 @@ let initialRender = async () => {
 let fetchUserDetails = async () => {
   const apiUrl = `https://api.github.com/users/${username}`;
   try {
-    let response = await fetch(apiUrl, {
-      headers: {
-        Authorization: "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",
-      },
-    });
+    let response = await fetch(apiUrl);
     let user = await response.json();
 
     if (user.message === "Not Found") return false;
@@ -108,11 +104,7 @@ let fetchRepositories = async (page, perPage) => {
   const apiUrl = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
 
   try {
-    let response = await fetch(apiUrl, {
-      headers: {
-        Authorization: "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",
-      },
-    });
+    let response = await fetch(apiUrl);
 
     let repos = await response.json();
     const reposContainer = document.getElementById("repos-container");
